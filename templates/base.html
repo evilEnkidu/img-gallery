@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      {% load static %}
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{% block title %} {% endblock title %}</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+      <header>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <!-- Uncoment when I get the logo -->
+            <!-- <img src="{% static 'img/logo.png' %}" alt="Mr. Signs Logo" height="40" class="me-2"> -->
+            <span class="h4 mb-0">Mr. Signs</span>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" 
+                       href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}" 
+                       href="{% url 'services' %}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}" 
+                       href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
+                       href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" 
+                       href="#">Contact</a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-outline-light" href="#">Get a Quote</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-3">Best Signs in the Imperial Valley</h1>
+                <p class="lead mb-4">Creating impactful signage solutions for your business. From concept to installation, we bring your vision to life.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="btn btn-primary btn-lg">View Our Work</a>
+                    <a href="#" class="btn btn-outline-light btn-lg">Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Hero Image -->
+                <div class="text-center mt-4 mt-lg-0">
+                    <!-- Actual hero image -->
+                    <img src="/static/images/sign.webp" alt="Sign Design" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Announcement Bar -->
+<div class="bg-primary text-white py-2 small">
+    <div class="container text-center">
+        🎉 Special Offer: -000% off on all custom signs this month! <a href="#" class="text-white text-decoration-underline">Get a Quote Now</a>
+    </div>
+</div>
+      </header>
+      <div class="container-fluid py-5">
+      {% block content %} 
+
+      {% endblock content %}
+      </div>      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      
+<footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 mb-4">
+                  <h5 class="text-uppercase mb-4">Company Name</h5>
+                  <p>
+                      Your trusted partner in technology and innovation. We strive to deliver excellence in everything we do.
+                  </p>
+                  <div class="mt-4">
+                      <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                      <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                      <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                      <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                  </div>
+              </div>
+  
+              <div class="col-md-3 mb-4">
+                  <h5 class="text-uppercase mb-4">Quick Links</h5>
+                  <ul class="list-unstyled">
+                      <li class="mb-2">
+                          <a href="#" class="text-white text-decoration-none">Home</a>
+                      </li>
+                      <li class="mb-2">
+                          <a href="#" class="text-white text-decoration-none">About Us</a>
+                      </li>
+                      <li class="mb-2">
+                          <a href="#" class="text-white text-decoration-none">Services</a>
+                      </li>
+                      <li class="mb-2">
+                          <a href="#" class="text-white text-decoration-none">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+  
+              <div class="col-md-3 mb-4">
+                  <h5 class="text-uppercase mb-4">Contact Us</h5>
+                  <ul class="list-unstyled">
+                      <li class="mb-2">
+                          <i class="bi bi-geo-alt me-2"></i> 123 Street Name, City, Country
+                      </li>
+                      <li class="mb-2">
+                          <i class="bi bi-envelope me-2"></i> info@example.com
+                      </li>
+                      <li class="mb-2">
+                          <i class="bi bi-phone me-2"></i> +1 234 567 8900
+                      </li>
+                  </ul>
+              </div>
+  
+              <div class="col-md-3 mb-4">
+                  <h5 class="text-uppercase mb-4">Newsletter</h5>
+                  <p>Subscribe to our newsletter for updates</p>
+                  <form action="#" method="POST">
+                      {% csrf_token %}
+                      <div class="input-group mb-3">
+                          <input type="email" class="form-control" placeholder="Email address" required>
+                          <button class="btn btn-outline-light" type="submit">Subscribe</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+  
+          <div class="row mt-4">
+              <div class="col-12">
+                  <hr class="bg-light">
+                  <div class="d-flex justify-content-between align-items-center">
+                      <p class="mb-0">&copy; 2025 Company Name. All rights reserved.</p>
+                      <div>
+                          <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                          <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+</body>
+</html>

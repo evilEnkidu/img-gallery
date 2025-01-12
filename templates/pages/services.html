@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Services{% endblock title %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% block content %}
+<section class="services py-5">
+      <div class="container">
+          <div class="text-center mb-5">
+              <h2 class="display-5 fw-bold mb-3">Our Services</h2>
+              <p class="lead text-muted">Bringing your vision to life with quality signage solutions</p>
+          </div>
+  
+          <div class="row g-4">
+              <div class="col-md-4">
+                  <div class="card h-100 shadow-sm hover-lift">
+                      <div class="card-body text-center p-4">
+                          <div class="mb-4">
+                              <i class="bi bi-vinyl-fill display-4 text-primary"></i>
+                          </div>
+                          <h3 class="h4 mb-3">Vinyl Adhesives</h3>
+                          <p class="text-muted mb-4">Custom vinyl stickers perfect for business branding, vehicle wraps, window displays, and promotional materials.</p>
+                          <ul class="list-unstyled text-start mb-4">
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Custom shapes and sizes</li>
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Weather-resistant options</li>
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>High-quality materials</li>
+                              <li><i class="bi bi-check2 text-primary me-2"></i>Quick turnaround time</li>
+                          </ul>
+                          <a href="#" class="btn btn-outline-primary">Learn More</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card h-100 shadow-sm hover-lift">
+                      <div class="card-body text-center p-4">
+                          <div class="mb-4">
+                              <i class="bi bi-lightbulb-fill display-4 text-primary"></i>
+                          </div>
+                          <h3 class="h4 mb-3">Neon Signs</h3>
+                          <p class="text-muted mb-4">Eye-catching LED neon signs for businesses, events, home decor, and special occasions. Modern, energy-efficient lighting solutions.</p>
+                          <ul class="list-unstyled text-start mb-4">
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Custom designs</li>
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Energy efficient LED</li>
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Indoor & outdoor options</li>
+                              <li><i class="bi bi-check2 text-primary me-2"></i>Remote control available</li>
+                          </ul>
+                          <a href="#" class="btn btn-outline-primary">Learn More</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-4">
+                  <div class="card h-100 shadow-sm hover-lift">
+                      <div class="card-body text-center p-4">
+                          <div class="mb-4">
+                              <i class="bi bi-flag-fill display-4 text-primary"></i>
+                          </div>
+                          <h3 class="h4 mb-3">Tarps & Banners</h3>
+                          <p class="text-muted mb-4">Durable, large-format banners and tarps for outdoor advertising, events, construction sites, and promotional displays.</p>
+                          <ul class="list-unstyled text-start mb-4">
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Weather-proof materials</li>
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Custom sizes available</li>
+                              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Reinforced edges</li>
+                              <li><i class="bi bi-check2 text-primary me-2"></i>Quick installation options</li>
+                          </ul>
+                          <a href="#" class="btn btn-outline-primary">Learn More</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="text-center mt-5">
+              <p class="lead mb-4">Ready to start your project?</p>
+              <a href="#" class="btn btn-primary btn-lg">Get a Free Quote</a>
+          </div>
+      </div>
+  </section>
+{% endblock content %}

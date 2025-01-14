@@ -1,0 +1,19 @@
+.about-section img {
+      transition: transform 0.3s ease;
+  }
+  
+  .about-section img:hover {
+      transform: scale(1.02);
+  }
+  
+  .card {
+      transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+      transform: translateY(-5px);
+  }
+  
+  .bg-light {
+      background-color: #f8f9fa !important;
+  }

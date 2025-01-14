@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+
+{% block content %}
+
+<section class="about-section py-5">
+      <div class="container">
+          <div class="row align-items-center">
+              <!-- Text Content (Left Side) -->
+              <div class="col-lg-6 mb-4 mb-lg-0">
+                  <h1 class="display-4 fw-bold mb-4">About Mr. Signs</h1>
+                  <div class="mb-4">
+                      <h5 class="text-primary mb-3">Your Vision, Our Expertise</h5>
+                      <p class="lead text-muted">With over 15 years of experience in the signage industry, we've been bringing brands to life through innovative and high-quality sign solutions.</p>
+                  </div>
+                  
+                  <div class="mb-4">
+                      <p>At Mr. Signs, we believe that every sign tells a story. Whether it's a storefront sign that welcomes customers, a vehicle wrap that turns heads on the street, or a banner that announces your special event, we put our heart and expertise into every project.</p>
+                      
+                      <p>Our team of skilled professionals combines traditional craftsmanship with modern technology to deliver signage solutions that not only meet but exceed our clients' expectations.</p>
+                  </div>
+                  
+                  <!-- Key Points -->
+                  <div class="row mb-4">
+                      <div class="col-md-6">
+                          <div class="mb-3">
+                              <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                              <span class="fw-bold">Quality Materials</span>
+                          </div>
+                          <div class="mb-3">
+                              <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                              <span class="fw-bold">Expert Installation</span>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="mb-3">
+                              <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                              <span class="fw-bold">Custom Designs</span>
+                          </div>
+                          <div class="mb-3">
+                              <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                              <span class="fw-bold">Quick Turnaround</span>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- CTA Button -->
+                  <div class="mt-4">
+                      <a href="#" class="btn btn-primary btn-lg me-3">Contact Us</a>
+                      <a href="#" class="btn btn-outline-primary btn-lg">View Our Work</a>
+                  </div>
+              </div>
+              
+              <!-- Image (Right Side) -->
+              <div class="col-lg-6">
+                  <div class="position-relative">
+                      <!-- Main Image -->
+                      <img src="{% static 'images/about-image.webp' %}" alt="Mr. Signs Workshop" class="img-fluid rounded shadow-lg">
+                      
+                      <div class="position-absolute top-0 end-0 bg-primary text-white p-4 rounded-circle shadow-lg" style="transform: translate(25%, -25%);">
+                          <div class="text-center">
+                              <span class="h2 d-block mb-0">15+</span>
+                              <span class="small">Years of<br>Experience</span>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Stats -->
+                  <div class="row mt-4 g-3">
+                      <div class="col-4">
+                          <div class="bg-light p-3 rounded text-center">
+                              <h3 class="mb-1">500+</h3>
+                              <p class="small text-muted mb-0">Projects</p>
+                          </div>
+                      </div>
+                      <div class="col-4">
+                          <div class="bg-light p-3 rounded text-center">
+                              <h3 class="mb-1">300+</h3>
+                              <p class="small text-muted mb-0">Clients</p>
+                          </div>
+                      </div>
+                      <div class="col-4">
+                          <div class="bg-light p-3 rounded text-center">
+                              <h3 class="mb-1">100%</h3>
+                              <p class="small text-muted mb-0">Satisfaction</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Team Section 
+  <section class="bg-light py-5">
+      <div class="container">
+          <h2 class="text-center mb-5">Meet Our Team</h2>
+          <div class="row g-4">
+              <div class="col-md-4">
+                  <div class="card border-0 shadow-sm">
+                      <img src="#" class="card-img-top" alt="Team Member">
+                      <div class="card-body text-center">
+                          <h5 class="card-title mb-1">John Doe</h5>
+                          <p class="text-muted small mb-3">Founder & CEO</p>
+                          <p class="card-text">Over 15 years of experience in custom signage and design.</p>
+                      </div>
+                  </div>
+              </div>
+              -->
+          </div>
+      </div>
+  </section>
+  {% endblock content %}

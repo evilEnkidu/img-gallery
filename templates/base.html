@@ -43,12 +43,17 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
-                       href="#">About</a>
+                       href="{% url 'about' %}">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" 
                        href="#">Contact</a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><strong style="color: gold;">Modo Jefe</strong></a>
+                </li>
+                {% endif %}
                 <li class="nav-item ms-lg-3">
                     <a class="btn btn-outline-light" href="#">Get a Quote</a>
                 </li>
@@ -157,17 +162,27 @@
           </div>
   
           <div class="row mt-4">
-              <div class="col-12">
-                  <hr class="bg-light">
-                  <div class="d-flex justify-content-between align-items-center">
-                      <p class="mb-0">&copy; 2025 Company Name. All rights reserved.</p>
-                      <div>
-                          <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
-                          <a href="#" class="text-white text-decoration-none">Terms of Service</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
+            <div class="col-12">
+                <hr class="bg-light">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="mb-0">&copy; 2025 Company Name. All rights reserved.</p>
+                    <div>
+                        {% if user.is_authenticated %}
+                        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-link text-white text-decoration-none me-3">Admin Logout</button>
+                        </form>
+                        
+                        {% else %}
+                            <a href="{% url 'login' %}" class="text-white text-decoration-none me-3">Admin Login</a>
+                        {% endif %}
+                        <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                        <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
       </div>
   </footer>
 </body>

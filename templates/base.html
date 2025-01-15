@@ -39,7 +39,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}" 
-                       href="#">Gallery</a>
+                       href="{% url 'our_work' %}">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
@@ -47,7 +47,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" 
-                       href="#">Contact</a>
+                       href="{% url 'contact' %}">Contact</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
@@ -55,7 +55,7 @@
                 </li>
                 {% endif %}
                 <li class="nav-item ms-lg-3">
-                    <a class="btn btn-outline-light" href="#">Get a Quote</a>
+                    <a class="btn btn-outline-light" href="https://web.whatsapp.com/" target=”_blank”>Get a Quote</a>
                 </li>
             </ul>
         </div>
@@ -70,7 +70,7 @@
                 <h1 class="display-4 fw-bold mb-3">Best Signs in the Imperial Valley</h1>
                 <p class="lead mb-4">Creating impactful signage solutions for your business. From concept to installation, we bring your vision to life.</p>
                 <div class="d-flex gap-3">
-                    <a href="#" class="btn btn-primary btn-lg">View Our Work</a>
+                    <a href="{% url 'our_work' %}" class="btn btn-primary btn-lg">View Our Work</a>
                     <a href="#" class="btn btn-outline-light btn-lg">Contact Us</a>
                 </div>
             </div>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Our Work Gallery{% endblock %}
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-5">Our Work Gallery</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for gallery in galleries %}
+        <div class="col">
+            <div class="card h-100">
+                {% with first_image=gallery.images.first %}
+                {% if first_image %}
+                <div id="carousel{{ gallery.id }}" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for img in gallery.images.all %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <img src="{{ img.image.url }}" class="d-block w-100" alt="{{ gallery.title }}"
+                                style="height: 250px; object-fit: cover;">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% if gallery.images.count > 1 %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ gallery.id }}"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ gallery.id }}"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% endwith %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ gallery.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ gallery.location }}</h6>
+                    <p class="card-text">{{ gallery.description|truncatewords:30 }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

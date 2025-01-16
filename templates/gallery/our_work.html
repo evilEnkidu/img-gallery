@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_clean.html' %}
 {% load static %}
 {% block title %}Our Work Gallery{% endblock %}
 {% block content %}
@@ -14,8 +14,9 @@
                     <div class="carousel-inner">
                         {% for img in gallery.images.all %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                            <img src="{{ img.image.url }}" class="d-block w-100" alt="{{ gallery.title }}"
-                                style="height: 250px; object-fit: cover;">
+                            <a href="{% url 'gallery_detail' gallery.pk %}"><img src="{{ img.image.url }}" class="d-block w-100" alt="{{ gallery.title }}"
+                                style="height: 250px; object-fit: cover;"></a>
+                                
                         </div>
                         {% endfor %}
                     </div>
@@ -38,10 +39,34 @@
                     <h5 class="card-title">{{ gallery.title }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{ gallery.location }}</h6>
                     <p class="card-text">{{ gallery.description|truncatewords:30 }}</p>
+                    {% if user.is_authenticated %}
+                    <div class="row">
+                        <div class="col-2"><small><a href="#">Edit</a></small></div>
+                        <div class="col-2"><small><a href="#">Delete</a></small></div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
         {% endfor %}
+        {% if user.is_authenticated %}
+        <div class="col">
+            <div class="card h-100">
+                <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/static/images/add.jpg" class="d-block w-100" alt="Create Image" 
+                                style="height: 250px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="display-6 text-center my-2"><a href="#" class="text-decoration-none">Add to Gallery</a></h2>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}

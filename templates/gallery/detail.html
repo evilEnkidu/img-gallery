@@ -1,0 +1,42 @@
+{% extends 'base_clean.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-4">{{ gallery.title }}</h1>
+            <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-geo-alt-fill me-2"></i>
+                <span class="text-muted">{{ gallery.location }}</span>
+                <span class="mx-3">|</span>
+                <i class="bi bi-calendar3 me-2"></i>
+            </div>
+            <p class="lead">{{ gallery.description }}</p>
+            {% if user.is_authenticated %}
+            <div class="row">
+                <div class="col-1"><small><a href="#">Edit</a></small></div>
+                <div class="col-1"><small><a href="#">Delete</a></small></div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Images -->
+    <div class="row g-4">
+        {% for image in images %}
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="{{ image.image.url }}" 
+                    class="card-img-top img-fluid" 
+                    alt="{{ gallery.title }} - Image {{ forloop.counter }}">
+                <div class="card-body">
+                    <p class="card-text text-muted small">Image {{ forloop.counter }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+        
+</div>
+{% endblock content %} 

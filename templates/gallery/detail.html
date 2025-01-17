@@ -15,8 +15,9 @@
             <p class="lead">{{ gallery.description }}</p>
             {% if user.is_authenticated %}
             <div class="row">
-                <div class="col-1"><small><a href="#">Edit</a></small></div>
-                <div class="col-1"><small><a href="#">Delete</a></small></div>
+                <div class="col-1"><small><a href="#">Edit Description</a></small></div>
+                <div class="col-1"><small><a href="#">Edit Images</a></small></div>
+                <div class="col-1"><small><a href="{% url 'gallery_delete' gallery.pk %}">Delete</a></small></div>
             </div>
             {% endif %}
         </div>

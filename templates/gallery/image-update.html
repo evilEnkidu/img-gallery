@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Update Gallery Image</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+<a href="{% url 'workgallery_detail' pk=form.instance.gallery.pk %}" class="btn btn-secondary">Cancel</a>
+{% endblock %}

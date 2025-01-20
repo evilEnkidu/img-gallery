@@ -1,4 +1,5 @@
 {% extends 'base_clean.html' %}
+{% block title %} {{ gallery.title }} - Gallery{% endblock title %}
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/detail.css' %}">
@@ -29,15 +30,33 @@
             <div class="card h-100">
                 <img src="{{ image.image.url }}" 
                     class="card-img-top img-fluid" 
-                    alt="{{ gallery.title }} - Image {{ forloop.counter }}">
+                    alt="{{ gallery.title }} - Image {{ forloop.counter }}"
+                    data-bs-toggle="modal"
+                    data-bs-target="#imageModal{{ forloop.counter }}"
+                    style="cursor: pointer;">
                 <div class="card-body">
                     <p class="card-text text-muted small">Image {{ forloop.counter }}</p>
                 </div>
             </div>
         </div>
+
+        <!-- Modal for this image -->
+        <div class="modal fade" id="imageModal{{ forloop.counter }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <img src="{{ image.image.url }}" 
+                            class="img-fluid" 
+                            alt="{{ gallery.title }} - Image {{ forloop.counter }}"
+                            style="width: 100%; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
         {% endfor %}
     </div>
-
-        
 </div>
 {% endblock content %} 

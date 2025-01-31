@@ -1,8 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Home{% endblock title %}
-
+{% block css %} <link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock css %}
 {% block content %}
+
+<main class="container">
+      <div class="slider" style="--width: 100px; --height: 50px; --quantity: 10;">
+            <div class="list">
+                <div class="item" style="--position: 1"><img src="{% static 'images/logo1.png' %}" alt="Image 1"></div>
+                <div class="item" style="--position: 2"><img src="{% static 'images/logo2.png' %}" alt="Image 2"></div>
+                <div class="item" style="--position: 3"><img src="{% static 'images/2.jpg' %}" alt="Image 3"></div>
+                <div class="item" style="--position: 4"><img src="{% static 'images/2.jpg' %}" alt="Image 4"></div>
+                <div class="item" style="--position: 5"><img src="{% static 'images/2.jpg' %}" alt="Image 5"></div>
+                <div class="item" style="--position: 6"><img src="{% static 'images/2.jpg' %}" alt="Image 6"></div>
+                <div class="item" style="--position: 7"><img src="{% static 'images/2.jpg' %}" alt="Image 7"></div>
+                <div class="item" style="--position: 8"><img src="{% static 'images/2.jpg' %}" alt="Image 8"></div>
+                <div class="item" style="--position: 9"><img src="{% static 'images/2.jpg' %}" alt="Image 9"></div>
+                <div class="item" style="--position: 10"><img src="{% static 'images/2.jpg' %}" alt="Image 10"></div>
+            </div>
+        </div>
+
+        <div class="slider" reverse="true" style="--width: 200px; --height: 200px; --quantity: 9;">
+            <div class="list">
+                <div class="item" style="--position: 1"><img src="{% static 'images/sq1.jpeg' %}" alt="Image 1"></div>
+                <div class="item" style="--position: 2"><img src="{% static 'images/sq2.jpeg' %}" alt="Image 2"></div>
+                <div class="item" style="--position: 3"><img src="{% static 'images/sq3.jpeg' %}" alt="Image 3"></div>
+                <div class="item" style="--position: 4"><img src="{% static 'images/sq4.jpeg' %}" alt="Image 4"></div>
+                <div class="item" style="--position: 5"><img src="{% static 'images/sq5.jpeg' %}" alt="Image 5"></div>
+                <div class="item" style="--position: 6"><img src="{% static 'images/sq6.jpeg' %}" alt="Image 6"></div>
+                <div class="item" style="--position: 7"><img src="{% static 'images/sq7.jpeg' %}" alt="Image 7"></div>
+                <div class="item" style="--position: 8"><img src="{% static 'images/sq8.jpeg' %}" alt="Image 8"></div>
+                <div class="item" style="--position: 9"><img src="{% static 'images/sq9.jpeg' %}" alt="Image 9"></div>
+            </div>
+        </div>
+</main>
 
 <div class="container mt-5"> 
       <div class="row">
@@ -12,7 +43,7 @@
                   <a href="{% url 'our_work' %}" class="btn btn-primary mb-3">See our <strong>Gallery</strong></a> 
             </div>
             <div class="col-md-6 text-center"> 
-                  <img src="{% static 'images/your-image.jpg' %}" class="img-fluid" alt="Image describing your business"> 
+                  <img src="{% static 'images/periko.jpeg' %}" class="img-fluid" alt="Image describing your business"> 
             </div>
       </div>
 </div>
